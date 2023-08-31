@@ -8,7 +8,7 @@ spring:
 spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://narsha.c6cxmhcz8twf.ap-northeast-2.rds.amazonaws.com/narsha?serverTimezone=UTC&characterEncoding=UTF-8
+    url: jdbc:mysql://narsha.c6cxmhcz8twf.ap-northeast-2.rds.amazonaws.com:3306/narsha?serverTimezone=UTC&characterEncoding=UTF-8
     username: narsha
     password: 'narsha2023!'
   jpa:
@@ -44,6 +44,9 @@ spring:
 spring.config.activate.on-profile: "local"
 spring:
   s3:
+    bucket: narsha-s3-bucket
+    access-key: AKIA3SG7PVJYP2U6M7YG
+    secret-key: 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
 
 ---
 # DEV 설정
