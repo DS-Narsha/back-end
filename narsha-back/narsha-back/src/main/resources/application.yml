@@ -1,0 +1,55 @@
+# Spring Boot 설정
+spring:
+  profiles:
+    active:
+      - local
+---
+# JPA 설정
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://narsha.c6cxmhcz8twf.ap-northeast-2.rds.amazonaws.com/narsha?serverTimezone=UTC&characterEncoding=UTF-8
+    username: narsha
+    password: 'narsha2023!'
+  jpa:
+    hibernate:
+      ddl-auto: update
+
+---
+# AWS 설정
+cloud:
+  aws:
+    region:
+      static: ap-northeast-2  # AWS 기본 리전을 설정
+    stack:
+      auto: false
+
+logging:
+  level:
+    com:
+      amazonaws:
+        util:
+          EC2MetadataUtils: error
+
+---
+# Multipart 설정
+spring:
+  servlet:
+    multipart:
+      max-file-size: 100MB # 요청한 파일 한 개의 크기
+      max-request-size: 100MB # 요청한 파일 전체의 크기
+
+---
+# LOCAL 설정
+spring.config.activate.on-profile: "local"
+spring:
+  s3:
+
+---
+# DEV 설정
+#spring.config.activate.on-profile: "profiles-dev"
+#spring:
+#  s3:
+#    bucket:
+#    access-key:
+#    secret-key:
