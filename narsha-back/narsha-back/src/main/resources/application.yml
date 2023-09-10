@@ -44,7 +44,9 @@ spring:
 spring.config.activate.on-profile: "local"
 spring:
   s3:
-
+    bucket: narsha-bucket-s3
+    access-key: AKIASIOJID4D7GBODVLH
+    secret-key: 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
 ---
 # DEV 설정
 #spring.config.activate.on-profile: "profiles-dev"
